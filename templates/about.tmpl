@@ -1,9 +1,13 @@
 {{define "about"}}
-{{template "_header" .AboutTitle}}
+{{template "_header" .Header}}
+{{template "_about" .About}}
+{{template "_footer"}}
+{{end}}
+
+{{define "_about"}}
 {{.AboutTitle}}
 <h2>{{.WhatQuestion}}</h2>
 <p>{{.WhatAnswer}}</p>
 <h2>{{.HowQuestion}}</h2>
 <p>{{.HowAnswer}}</p>
-{{template "_footer"}}
 {{end}}

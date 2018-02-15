@@ -1,8 +1,10 @@
 title: Bezpieczne Miejsce
-home:
-  home_title: Bezpieczne Miejsce
+header:
+  title: Bezpieczne Miejsce
   address_field_label: Wprowadź Adres
   about_link: O Stronie
+home:
+  blurb: Znalazłeś nieruchomość w Irlandii, ale nie znasz okolicy? [...]
 about:
   about_title: O Safer.Place
   what_question: Co to jest Safer.Place

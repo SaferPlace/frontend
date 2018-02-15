@@ -1,6 +1,9 @@
-{{define "index"}}
-{{template "_header" .HomeTitle}}
-{{.HomeTitle}}
-<a href="/about">{{.AboutLink}}</a>
+{{define "home"}}
+{{template "_header" .Header}}
+{{template "_home" .Home}}
 {{template "_footer"}}
+{{end}}
+
+{{define "_home"}}
+<p>{{.Blurb}}</p>
 {{end}}
