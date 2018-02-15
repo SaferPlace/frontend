@@ -11,10 +11,14 @@ import (
 )
 
 type language struct {
-	Home struct {
-		HomeTitle         string `yaml:"home_title"`
+	Header struct {
+		Lang              string // This field is filled at runtime
+		Title             string `yaml:"title"`
 		AddressFieldLabel string `yaml:"address_field_label"`
 		AboutLink         string `yaml:"about_link"`
+	}
+	Home struct {
+		Blurb string `yaml:"blurb"`
 	}
 	About struct {
 		AboutTitle   string `yaml:"about_title"`

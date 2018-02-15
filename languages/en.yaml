@@ -1,8 +1,10 @@
 title: Safer Place
-home:
-  home_title: Safer.Place
+header:
+  title: Safer.Place
   address_field_label: Please enter an address
   about_link: About
+home:
+  blurb: Have you found a property somewhere in Ireland, but you aren't familiar with the area? [...]
 about:
   about_title: About Safer.Place
   what_question: What is Safer.Place?
