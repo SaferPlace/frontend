@@ -1,0 +1,72 @@
+defaults: &defaults
+  working_directory: /go/src/github.com/saferplace/frontend
+  docker:
+    - image: golang:1.9.4
+
+version: 2
+jobs:
+  setup:
+    <<: *defaults
+    steps:
+      - checkout
+      - run:
+          name: Get Dependencies
+          command: go get -v -u ./...
+      - run:
+          name: Install Go JUnit
+          command: go get -v -u github.com/jstemmer/go-junit-report
+      - persist_to_workspace:
+          root: /go
+          paths: .
+
+  build:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: /go
+      - run:
+          name: Build Binary
+          command: go build -o build/frontend -v .
+      # TODO: Build all dependencies
+
+  # TODO: Add Tests
+
+  analyse:
+    <<: *defaults
+    environment:
+      ARTIFACTS_FOLDER: /tmp/artifacts
+    steps:
+      - attach_workspace:
+          at: /go
+      - run:
+          name: Create ARTIFACTS_FOLDER folder
+          command: mkdir -p $ARTIFACTS_FOLDER
+      - run:
+          name: Check Coverage
+          command: |
+            tmp="/tmp/cov"
+            mkdir -p $tmp
+            for pkg in $(go list ./...); do
+              f="$tmp/$(echo $pkg | tr / -).cover"
+              go test -coverprofile="$f" $pkg
+            done
+            echo "mode: count" > "${ARTIFACTS_FOLDER}/cover.out"
+            ls $tmp
+            grep -h -v "^mode:" "$tmp"/*.cover >> "${ARTIFACTS_FOLDER}/cover.out"
+      - run:
+          name: Export Coverage
+          command: bash <(curl -s https://codecov.io/bash) -f $ARTIFACTS_FOLDER/cover.out
+      - store_artifacts:
+          path: /tmp/artifacts
+
+workflows:
+  version: 2
+  test_build_analyse:
+    jobs:
+      - setup
+      - build:
+          requires:
+            - setup
+      - analyse:
+          requires:
+            - setup

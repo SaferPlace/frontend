@@ -1,0 +1,11 @@
+title: Safer Place
+home:
+  home_title: Safer.Place
+  address_field_label: Please enter an address
+  about_link: About
+about:
+  about_title: About Safer.Place
+  what_question: What is Safer.Place?
+  what_answer: Safer.Place is a project created to help students who have to move houses for university. [...]
+  how_question: How does Safer.Place work? [...]
+  how_answer: We collate government provided data on crime [...]
