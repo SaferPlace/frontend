@@ -13,30 +13,22 @@ func main() {
 	langs := languages()
 
 	r.LoadHTMLGlob("templates/**")
-
 	r.GET("/", func(c *gin.Context) {
-		lang, ok := langs[c.DefaultQuery("lang", "en")]
-		if !ok {
-			c.HTML(http.StatusNotFound, "404.tmpl", gin.H{"error": "language not found"})
-		}
-		c.HTML(http.StatusOK, "index", lang.Home)
+		c.HTML(http.StatusOK, "index", useLang(langs, c).Home)
 	})
-
 	r.GET("/about", func(c *gin.Context) {
-		lang, ok := langs[c.DefaultQuery("lang", "en")]
-		if !ok {
-			c.HTML(http.StatusNotFound, "404.tmpl", gin.H{"error": "language not found"})
-		}
-		c.HTML(http.StatusOK, "about", lang.About)
+		c.HTML(http.StatusOK, "about", useLang(langs, c).About)
 	})
 
 	r.Run()
 }
 
-// default values in case a string is empty
-func def(str, def string) string {
-	if str != "" {
-		return str
+// helper function to make the code more DRY. It selects the language from the
+// context or fails the request.
+func useLang(langs map[string]language, c *gin.Context) language {
+	lang, ok := langs[c.DefaultQuery("lang", "en")]
+	if !ok {
+		c.HTML(http.StatusNotFound, "404.tmpl", gin.H{"error": "language not found"})
 	}
-	return def
+	return lang
 }
