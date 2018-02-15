@@ -35,6 +35,7 @@ jobs:
     <<: *defaults
     environment:
       ARTIFACTS_FOLDER: /tmp/artifacts
+      CODECLIMATE_REPO_TOKEN: 2bc9aac4cd0de49e0031e2f7fc923d7a60a0bc6f926f414ded8af34ea080b128
     steps:
       - attach_workspace:
           at: /go
