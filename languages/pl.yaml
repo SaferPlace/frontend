@@ -1,0 +1,11 @@
+title: Bezpieczne Miejsce
+home:
+  home_title: Bezpieczne Miejsce
+  address_field_label: Wprowadź Adres
+  about_link: O Stronie
+about:
+  about_title: O Safer.Place
+  what_question: Co to jest Safer.Place
+  what_answer: Safer.Place jest to projekt stworzony dla studentów szukajacych mieszkań. [...]
+  how_question: Jak to działa?
+  how_answer: Używamy danych udostępnionych przez Irlandzki rząd na temat przestępczości. [...]
