@@ -10,7 +10,18 @@
 </head>
 <body class="flex flex-column pa0 ma0" style="height: 100%; margin: 0;">
 <header class="white bg-blue pa4 ma0 tc" style="font-family: 'Open Sans', cursive;">
-  <a href="/?lang={{.Lang}}" class="link"><h1>{{.Title}}</h1></a>
-  <a href="/about?lang={{.Lang}}">{{.AboutLink}}</a>
+  <a href="/?lang={{.Lang}}" class="link"><h1 class="f1 b ma0 no-underline white">{{.Title}}</h1></a>
+  <nav class="list f4 b ma3">
+    <a href="/about?lang={{.Lang}}" class="link white ma3">{{.AboutLink}}</a>
+  </nav>
+  <div class="bg-blue tc flex justify-center">
+    <form action="details" class="mt3 mh0 w-50 shadow-3-1 flex cf br2 bg-white">
+      <i class="material-icons f3 pa3 mt1 gray">search</i>
+      <input name="input" placeholder="{{.AddressFieldLabel}}" class="bn f3 pa3 pl0 w-90 border-box input-reset outline-0">></input>
+      <input type="hidden" name="lang" value="{{.Lang}}"></input>
+      <button type="submit" class="bn f2 pa2 button-reset bg-white br2 h-100 br--right self-end pointer outline-0"><i class="material-icons">arrow_forward</i></input>
+    </form>
+  </div>
 </header>
+<section id="contentdiv" class="h-100 tc f4 lh-title" style="font-family: 'Open Sans', serif;">
 {{end}}

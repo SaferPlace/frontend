@@ -13,6 +13,7 @@ import (
 type language struct {
 	Header struct {
 		Lang              string // This field is filled at runtime
+		Input             string // This field is filled at runtime
 		Title             string `yaml:"title"`
 		AddressFieldLabel string `yaml:"address_field_label"`
 		AboutLink         string `yaml:"about_link"`
