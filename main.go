@@ -32,5 +32,6 @@ func useLang(langs map[string]language, c *gin.Context) language {
 		c.HTML(http.StatusNotFound, "404.tmpl", gin.H{"error": "language not found"})
 	}
 	lang.Header.Lang = reqLang
+	lang.Header.Input = c.DefaultQuery("input", "")
 	return lang
 }
