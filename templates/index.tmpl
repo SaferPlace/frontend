@@ -5,5 +5,12 @@
 {{end}}
 
 {{define "_home"}}
-<p>{{.Blurb}}</p>
+<div id="imagecontainer" class="ph6 cover" style="background-image: url('https://c1.staticflickr.com/5/4021/4486350855_dc8cc967f2_b.jpg'); height: 100%; width: 100%; display: flex; flex-direction: column; overflow: hidden; position: absolute;">
+  <div id="blurbcontainer" class="bg-black br4 o-60 white ph4 pv2 w6 mh5 mt4 tc f3 center" style="margin: auto; font-family: 'Raleway', cursive;">
+    <p>{{.Blurb}}</p>
+  </div>
+  <div id="image-attribution" class="i light-gray f6" style="font-family: 'Open Sans', serif;">
+    <a href="https://www.flickr.com/photos/smemon/" class="link b white">Seán McEntee (Flickr)</a>
+  </div>
+</div>
 {{end}}
