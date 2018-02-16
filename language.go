@@ -27,6 +27,10 @@ type language struct {
 		WhatAnswer   string `yaml:"what_answer"`
 		HowQuestion  string `yaml:"how_question"`
 		HowAnswer    string `yaml:"how_answer"`
+		QandA        []struct {
+			Question string `yaml:"question"`
+			Answer   string `yaml:"answer"`
+		} `yaml:"q_and_a"`
 	}
 }
 

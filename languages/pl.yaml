@@ -7,7 +7,8 @@ home:
   blurb: Znalazłeś nieruchomość w Irlandii, ale nie znasz okolicy? [...]
 about:
   about_title: O Safer.Place
-  what_question: Co to jest Safer.Place
-  what_answer: Safer.Place jest to projekt stworzony dla studentów szukajacych mieszkań. [...]
-  how_question: Jak to działa?
-  how_answer: Używamy danych udostępnionych przez Irlandzki rząd na temat przestępczości. [...]
+  q_and_a:
+    - question: Co to jest Safer.Place
+      answer: Safer.Place jest to projekt stworzony dla studentów szukajacych mieszkań. [...]
+    - question: Jak to działa?
+      answer: Używamy danych udostępnionych przez Irlandzki rząd na temat przestępczości. [...]
