@@ -7,7 +7,8 @@ home:
   blurb: Have you found a property somewhere in Ireland, but you aren't familiar with the area? [...]
 about:
   about_title: About Safer.Place
-  what_question: What is Safer.Place?
-  what_answer: Safer.Place is a project created to help students who have to move houses for university. [...]
-  how_question: How does Safer.Place work? [...]
-  how_answer: We collate government provided data on crime [...]
+  q_and_a:
+    - question: What is Safer.Place?
+      answer: Safer.Place is a project created to help students who have to move houses for university. [...]
+    - question: How does Safer.Place work? [...]
+      answer: We collate government provided data on crime [...]
